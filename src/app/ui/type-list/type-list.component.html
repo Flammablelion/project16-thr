@@ -1,0 +1,19 @@
+<div class="container mt-3">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Имя</th>
+                </tr>
+            </thead>
+            <tbody>
+             <tr *ngFor="let type of types">
+                <td>{{ type.id }}</td>
+                <td (click)="linkToItem(type.id)" >{{ type.name }}</td>
+                <button class="btn btn-danger ml-2" (click) = "deleteType(type.id)">Удалить</button>
+             </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

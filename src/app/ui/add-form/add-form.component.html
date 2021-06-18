@@ -1,0 +1,28 @@
+<form [formGroup]=cardForm>
+    <div class="container">
+        <div class="col-12">
+            <div class="jumbotron">
+                <h1 class="display-3">Заметки</h1>
+                <p class="lead">Это форма для создания заметки, запишите имя заметки и её содержание и нажмите кнопку
+                    "Добавить заметку", для очистки формы используйте соответствующую кнопку</p>
+                <hr class="my-2">
+                <input type="text" class="form-control mb-2" placeholder="Название" aria-label=""
+                    aria-describedby="basic-addon1" formControlName="name"
+                    [ngClass]="{'invalid': cardForm.get('name')?.invalid && cardForm.get('name')?.touched}">
+                <textarea class="col" formControlName="inputText"
+                    [ngClass]="{'invalid': cardForm.get('inputText')?.invalid && cardForm.get('name')?.touched}"> </textarea>
+                <label for="type" class="mr-2">Выберите тип заметки</label>
+
+                <select class="mt-3 mb-3" name="type" formControlName="type">
+                    <option *ngFor="let type of types" [ngValue]="type.id"> {{type.name}}</option>
+                </select>
+                <p class="lead">
+                    <button class="btn btn-primary btn-lg" role="button" (click)="onAddNote()"
+                        [disabled]="cardForm.invalid">Сохранить</button>
+                    <button class="btn btn-primary btn-lg" role="button" style="margin-left: 20px; "
+                        (click)="getClear()">Очистить форму</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</form>

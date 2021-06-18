@@ -1,0 +1,8 @@
+<div class="container mt-3">
+    <div class="row">
+        <form [formGroup]=typeForm  class="form-inline">
+                <input class="form-control mr-sm-2" type="text" placeholder="Название типа" formControlName="name">
+                <button class="btn btn-danger my-2 my-sm-0" type="submit" (click)="addType()" [disabled]="typeForm.invalid">Сохранить</button>
+        </form>
+    </div>
+</div>

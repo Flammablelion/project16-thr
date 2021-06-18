@@ -1,0 +1,11 @@
+.myblock{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+.input-text{
+    width: 500px;
+    height: 200px;
+}
+
